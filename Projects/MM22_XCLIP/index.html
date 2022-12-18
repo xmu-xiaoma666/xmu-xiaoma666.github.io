@@ -330,7 +330,7 @@
             <ul class="list-unstyled name-list">
                 <li><a href="https://scholar.google.com/citations?user=KIDY5pUAAAAJ&hl=zh-CN" target="_blank">Yiwei Ma</a><sup>1</sup></li>
                 <li><a href="https://scholar.google.com/citations?user=bS8Ku4MAAAAJ&hl=en" target="_blank">Guohai Xu</a><sup>3</sup></li>
-                <li><a href="https://scholar.google.com/citations?user=KPMK3B4AAAAJ&hl=en" target="_blank">Xiaoshuai Sun</a><sup>12</sup></li>
+                <li><a href="https://scholar.google.com/citations?user=KPMK3B4AAAAJ&hl=en" target="_blank">Xiaoshuai Sun</a><sup>12</sup>✉</li>
                 <li><a href="https://scholar.google.com/citations?user=uIUfGxYAAAAJ&hl=zh-CN" target="_blank">Ming Yan</a><sup>3</sup></li>
                 <li><a href="https://scholar.google.com/citations?user=cgnuJDUAAAAJ&hl=zh-CN" target="_blank">Ji Zhang</a><sup>3</sup></li>
                 <li><a href="https://scholar.google.com/citations?user=lRSD7PQAAAAJ&hl=en" target="_blank"> Rongrong Ji</a><sup>12</sup></li>
@@ -341,11 +341,11 @@
                 <li><sup>3</sup>DAMO Academy, Alibaba Group</li>
             </ul>
             <ul class="list-unstyled name-list">
-                <li>*equal contribution</li>
+                <!-- <li>*equal contribution</li> -->
                 <li>✉corresponding author</li>
             </ul>
-            <div class="title"><a href="https://s2022.siggraph.org/" target="_blank"><strong>SIGGRAPH 2022</strong></a> (Journal Track)</div>
-            <div style="font-size:large;"><strong>TL;DR:</strong> AvatarCLIP generate and animate avatars given descriptions of <span style="color:#0a939d">body shapes</span>, <span style="color:#EE9B00">appearances</span> and <span style="color:#AE2011">motions</span>.</div>
+            <div class="title"><a href="https://2022.acmmm.org/" target="_blank"><strong>ACM MM 2022</strong></a> (Main Track)</div>
+            <div style="font-size:large;"><strong>TL;DR:</strong> X-CLIP is a video-text retrieval model with <span style="color:#0a939d">multi-grained contrastive learning</span> based on  <span style="color:#FF0000">CLIP</span>.</div>
         </div>
 
             
@@ -355,9 +355,24 @@
             Abstract
         </div>
         <div class="details">
-            3D avatar creation plays a crucial role in the digital age. However, the whole production process is prohibitively time-consuming and labor-intensive. To democratize this technology to a larger audience, <strong>we propose AvatarCLIP, a zero-shot text-driven framework for 3D avatar generation and animation</strong>. Unlike professional software that requires expert knowledge, <strong>AvatarCLIP empowers layman users to customize a 3D avatar with the desired shape and texture, and drive the avatar with the described motions using solely natural languages</strong>.
-            <br>
-            Our key insight is to <strong>take advantage of the powerful vision-language model CLIP</strong> for supervising neural human generation, in terms of 3D geometry, texture and animation. Specifically, driven by natural language descriptions, we initialize 3D human geometry generation with a shape VAE network. Based on the generated 3D human shapes, a volume rendering model is utilized to further facilitate geometry sculpting and texture generation. Moreover, by leveraging the priors learned in the motion VAE, a CLIP-guided reference-based motion synthesis method is proposed for the animation of the generated 3D avatar. Extensive qualitative and quantitative experiments validate the effectiveness and generalizability of AvatarCLIP on a wide range of avatars. Remarkably, AvatarCLIP can generate unseen 3D avatars with novel animations, achieving superior zero-shot capability.
+            3Video-text retrieval has been a crucial and fundamental task in
+multi-modal research. The development of video-text retrieval has
+been considerably promoted by large-scale multi-modal contrastive
+pre-training, which primarily focuses on coarse-grained or finegrained contrast. However, cross-grained contrast, which is the
+contrast between coarse-grained representations and fine-grained
+representations, has rarely been explored in prior research. Compared with fine-grained or coarse-grained contrasts, cross-grained
+contrast calculate the correlation between coarse-grained features
+and each fine-grained feature, and is able to filter out the unnecessary fine-grained features guided by the coarse-grained feature
+during similarity calculation, thus improving the accuracy of retrieval. To this end, this paper presents a novel multi-grained contrastive model, namely <strong>X-CLIP</strong>, for video-text retrieval. However,
+another challenge lies in the similarity aggregation problem, which
+aims to aggregate fine-grained and cross-grained similarity matrices to instance-level similarity. To address this challenge, we
+propose the <strong> Attention Over Similarity Matrix (AOSM) module </strong> to
+make the model focus on the contrast between essential frames
+and words, thus lowering the impact of unnecessary frames and
+words on retrieval results. With multi-grained contrast and the proposed AOSM module, X-CLIP achieves outstanding performance
+on five widely-used video-text retrieval datasets, including <i>MSRVTT (49.3 R@1), MSVD (50.4 R@1), LSMDC (26.1 R@1), DiDeMo
+  (47.8 R@1) and ActivityNet (46.2 R@1)</i>. It outperforms the previous state-of-the-art by <i>+6.3%, +6.6%, +11.1%, +6.7%, +3.8%</i> relative
+improvements on these benchmarks, demonstrating the superiority of multi-grained contrast and AOSM.
         </div>
     </section>
 
@@ -370,36 +385,18 @@
                 <tbody><tr>
                     <td>
                         <div class="links-container">
-                            <a href="https://arxiv.org/abs/2205.08535" target="_blank"><img class="links-cover" src="./AvatarCLIP - Project Page_files/cover.png" alt="PDF Cover"></a>
+                            <a href="https://arxiv.org/pdf/2207.07285.pdf" target="_blank"><img class="links-cover" src="./img/paper.png" alt="PDF Cover"></a>
                         </div>
                     </td>
                     <td>
                         <div class="links-container">
-                            <a href="https://drive.google.com/file/d/1_-5JIWyRCF7osAVWQ-z01nme4NxBTtrC/view?usp=sharing" target="_blank"><img class="links-cover" src="./AvatarCLIP - Project Page_files/cover.png" alt="PDF Cover"></a>
+                            <a href="https://github.com/xuguohai/X-CLIP" target="_blank"><img class="links-cover" src="../common_imgs/github.png" alt="github icon"></a>
                         </div>
                     </td>
-                    <td>
-                        <div class="links-container">
-                            <a href="https://youtu.be/-l2ZMeoASGY" target="_blank"><img class="links-cover" src="./AvatarCLIP - Project Page_files/youtube-icon.png" alt="youtube icon"></a>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="links-container">
-                            <a href="https://github.com/hongfz16/AvatarCLIP" target="_blank"><img class="links-cover" src="./AvatarCLIP - Project Page_files/github.png" alt="github icon"></a>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="links-container">
-                            <a href="https://colab.research.google.com/drive/1dfaecX7xF3nP6fyXc8XBljV5QY1lc1TR?usp=sharing" target="_blank"><img class="links-cover" src="./AvatarCLIP - Project Page_files/colab-icon.png" alt="colab icon">
-                        </a></div><a href="https://colab.research.google.com/drive/1dfaecX7xF3nP6fyXc8XBljV5QY1lc1TR?usp=sharing" target="_blank">
-                    </a></td>
                 </tr>
                 <tr>
-                    <td><a href="https://arxiv.org/abs/2205.08535" target="_blank">Low Res PDF (arXiv)</a></td>
-                    <td><a href="https://drive.google.com/file/d/1_-5JIWyRCF7osAVWQ-z01nme4NxBTtrC/view?usp=sharing" target="_blank">High Res PDF (166M)</a></td>
-                    <td><a href="https://youtu.be/-l2ZMeoASGY" target="_blank">Supplementary Video</a></td>
-                    <td><a href="https://github.com/hongfz16/AvatarCLIP" target="_blank">Codes</a></td>
-                    <td><a href="https://colab.research.google.com/drive/1dfaecX7xF3nP6fyXc8XBljV5QY1lc1TR?usp=sharing" target="_blank">Colab Demo</a></td>
+                    <td><a href="https://arxiv.org/pdf/2207.07285.pdf" target="_blank">PDF (arXiv)</a></td>
+                    <td><a href="https://github.com/xuguohai/X-CLIP" target="_blank">Code</a>
                 </tr>
             </tbody></table>
         </div>
@@ -433,16 +430,16 @@
             Bibtex
         </div>
         <div class="details">       
-            <pre>@article{hong2022avatarclip,
-    title={AvatarCLIP: Zero-Shot Text-Driven Generation and Animation of 3D Avatars},
-    author={Hong, Fangzhou and Zhang, Mingyuan and Pan, Liang and Cai, Zhongang and Yang, Lei and Liu, Ziwei},
-    journal={ACM Transactions on Graphics (TOG)},
-    volume={41},
-    number={4},
-    pages={1--19},
-    year={2022},
-    publisher={ACM New York, NY, USA}
+            <pre>
+              <code>
+@inproceedings{ma2022x,
+  title={X-CLIP: End-to-End Multi-grained Contrastive Learning for Video-Text Retrieval},
+  author={Ma, Yiwei and Xu, Guohai and Sun, Xiaoshuai and Yan, Ming and Zhang, Ji and Ji, Rongrong},
+  booktitle={Proceedings of the 30th ACM International Conference on Multimedia},
+  pages={638--647},
+  year={2022}
 }
+              </code>
             </pre>
         </div>
     </section>
@@ -452,23 +449,20 @@
             Related Works
         </div>
         <p>There are lots of wonderful works that might interest you.</p>
-        <p>+ <a href="https://hongfz16.github.io/projects/EVA3D.html" target="_blank">EVA3D</a> is the first high-quality unconditional 3D human generative model that only requires 2D image collections for training.</p>
-        <p>+ <a href="https://mingyuan-zhang.github.io/projects/MotionDiffuse.html" target="_blank">MotionDiffuse</a> is the first diffusion-model-based text-driven motion generation framework with probabilistic mapping, realistic synthesis and multi-level manipulation ability.</p>
-        <p>+ <a href="https://stylegan-human.github.io/" target="_blank">StyleGAN-Human</a> scales up high-quality 2D human dataset and achieves impressive 2D human generation results.</p>
-        <p>+ <a href="https://yumingj.github.io/projects/Text2Human.html">Text2Human</a> proposes a text-driven controllable human image generation framework.</p>
-        <p>There are lots of wonderful works that inspire our work or come around the same time as ours.</p>
-        <p>+ <a href="https://arxiv.org/abs/2112.01455">Dream Fields</a> enables zero-shot text-driven general 3D object generation using CLIP and NeRF.</p>
-        <p>+ <a href="https://arxiv.org/abs/2112.03221">Text2Mesh</a> proposes to edit a template mesh by predicting offsets and colors per vertex using CLIP and differentiable rendering.</p>
-        <p>+ <a href="https://arxiv.org/abs/2112.05139">CLIP-NeRF</a> can manipulate 3D objects represented by NeRF with natural languages or examplar images by leveraging CLIP.</p>
-        <p>+ <a href="https://arxiv.org/abs/2203.13333">Text to Mesh</a> facilitates zero-shot text-driven general mesh generation by deforming from a sphere mesh guided by CLIP.</p>
+        <p>+ <a href="https://github.com/openai/CLIP" target="_blank">CLIP</a> is an important work in the field of large-scale image pre-training.</p>
+        <p>+ <a href="https://github.com/ArrowLuo/CLIP4Clip" target="_blank">CLIP4Clip</a> is the first work to transfer the knowledge of CLIP to the video-text retrieval task.</p>
     </section>
 
     <section class="section">
         <div class="section-title">
             Acknowledgement
         </div>
-        <p>This study is supported by NTU NAP, MOE AcRF Tier 2 (T2EP20221-0033), and under the RIE2020 Industry Alignment Fund – Industry Collaboration Projects (IAF-ICP) Funding Initiative, as well as cash and in-kind contribution from the industry partner(s).</p>
-        <p>We referred to the project page of <a href="https://nerfies.github.io/">Nerfies</a> when creating this project page.</p>
+        <p>This work was supported by the National Science Fund for Distinguished Young Scholars (No.62025603), the National Natural Science
+          Foundation of China (No. U21B2037, No. 62176222, No. 62176223,
+          No. 62176226, No. 62072386, No. 62072387, No. 62072389, and No.
+          62002305), Guangdong Basic and Applied Basic Research Foundation (No.2019B1515120049), and the Natural Science Foundation of Fujian Province of China (No.2021J01002).</p>
+        <p>This work was supported
+          by Alibaba Group through Alibaba Research Intern Program.</p>
     </section>
 
 </div>
