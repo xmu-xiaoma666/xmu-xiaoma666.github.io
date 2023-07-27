@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="">
+  <meta name="keywords" content="RefCLIP, REC">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beat: Bi-directional One-to-Many Embedding Alignment for Text-based Person Retrieval</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Beat: Bi-directional One-to-Many Embedding Alignment for Text-based Person Retrieval</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=KIDY5pUAAAAJ&hl=en&oi=ao">Yiwei Ma</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=en&user=KPMK3B4AAAAJ">Xiaoshuai Sun</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=en&user=xp_rICcAAAAJ">Jiayi Ji</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=en&user=yw-rcj4AAAAJ">Guannan Jiang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              Weilin Zhuang<sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=en&user=lRSD7PQAAAAJ">Rongrong Ji</a><sup>1</sup>,</span>
+
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Xiamen University,</span>
+            <span class="author-block"><sup>2</sup>Contemporary Amperex Technology</span>
+
+          </div>
+          <div class="is-size-5 publication-authors">
+            <!-- <span class="author-block"><sup>*</sup>Equal contribution</span> -->
+            <span class="author-block"><sup>✧</sup>Corresponding author</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper Coming</span>
+                </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code Coming</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+    <div class="column is-full-width">
+      <!-- Visual Effects. -->
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Text-based person retrieval (TPR) is a challenging task that involves retrieving a specific individual based on a textual description. Despite considerable efforts to bridge the gap between vision and language, the significant differences between these modalities continue to pose a challenge. Previous methods have attempted to align text and image samples in a modal-shared space, but they face uncertainties in optimization directions due to the movable features of both modalities and the failure to account for one-to-many relationships of image-text pairs in TPR datasets. To address this issue, we propose an effective bi-directional one-to-many embedding paradigm that offers a clear optimization direction for each sample, thus mitigating the optimization problem. Additionally, this embedding scheme generates multiple features for each sample without introducing trainable parameters, making it easier to align with several positive samples. Based on this paradigm, we propose a novel Bi-directional one-to-many Embedding Alignment (Beat) model to address the TPR task. Our experimental results demonstrate that the proposed Beat model achieves state-of-the-art performance on three popular TPR datasets, including CUHK-PEDES (64.23 R@1), ICFG-PEDES (58.16 R@1), and RSTPReID (46.90 R@1). In particular, it outperforms previous state-of-the-art models by +1.31%, +7.25%, and +13.34% relative improvements, respectively. Furthermore, additional experiments on MS-COCO, CUB, and Flowers datasets further demonstrate the potential of Beat to be applied to other image-text retrieval tasks.
+          </p>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+    <div class="column is-full-width">
+      <!-- Visual Effects. -->
+        <h2 class="title is-3">Model Architecture</h2>
+        <img src="static/images/BEAT.png" style="width: 100%" alt>
+        <div class="content has-text-justified">
+        <p>
+          <b>Illustration of the proposed Beat model. Images and texts are first processed by ConvNet and SeqModel to obtain
+            visual features 𝑽 and textual features 𝑻, respectively. Global features 𝒗𝑔 and 𝒕𝑔 are extracted through a global max pooling
+            (GMP) and a fully connected layer (FC) based on 𝑽 and 𝑻. Similarly, we adopt a global max pooling (GMP) and an FC layer to
+            obtain 𝐾 local visual features 
+            . Then, we employ word attention module (WAM) , GMP and FC layer to obtain 𝐾
+            local textual features 
+            . We then adopt a non-local module (NLM) to get 𝐾 non-local visual features 
+            and textual
+            features 
+            . Afterward, the REM-G is introduced to perform bi-directional one-to-many embedding. Finally, textual and
+            visual samples are aligned in two modal-specific spaces under the guidance of ID loss and CR loss.
+        </p>
+        </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+    <div class="column is-full-width">
+      <!-- Visual Effects. -->
+        <h2 class="title is-3">Visualization results on CUHK-PEDES</h2>
+        <img src="static/images/vis.png" style="width: 100%" alt>
+        <div class="content has-text-justified">
+        <p>
+          Comparison of heatmaps between the base model and Beat. The Base model often attends to a large area, while the
+BEAT model can accurately focus on pedestrian areas.
+        </p>
+        </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+    <div class="column is-full-width">
+      <!-- Visual Effects. -->
+        <h2 class="title is-3">t-SNE Visualization results on CUHK-PEDES</h2>
+        <img src="static/images/vis2.png" style="width: 100%" alt>
+        <div class="content has-text-justified">
+        <p>
+          Feature visualization of the base model and Beat via t-SNE on CUHK-PEDES. We show the changing process
+of cross-modal feature distributions with training. The feature of each image and text is marked as a circle and a triangle,
+respectively. Each identity is indicated in a specific color. For clarity, we only visualize global visual and textual features.
+        </p>
+        </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@InProceedings{Jin_2023_CVPR,
+    author    = {Jin, Lei and Luo, Gen and Zhou, Yiyi and Sun, Xiaoshuai and Jiang, Guannan and Shu, Annan and Ji, Rongrong},
+    title     = {RefCLIP: A Universal Teacher for Weakly Supervised Referring Expression Comprehension},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2023},
+    pages     = {2681-2690}
+}
+</code></pre>
+  </div>
+</section> -->
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <h3 class="title">Acknowledgements</h3>
+          <p>
+            The website template was borrowed from <a href="https://nerfies.github.io/">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
