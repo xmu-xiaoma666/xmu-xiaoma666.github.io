@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>X-Dreamer: Creating High-quality 3D Content by Bridging the Domain Gap Between Text-to-2D and Text-to-3D Generation</title>
+  <link rel="shortcut icon" href="./static/our_gif/logo.ico" />
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  
+
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <img style="width:15%;" src="./static/our_gif/logo_name.png">
+          <p><span>&nbsp</span></p>
+          <h1 class="title is-1 publication-title">X-Dreamer: Creating High-quality 3D Content by Bridging the Domain Gap Between Text-to-2D and Text-to-3D Generation</h1>
+          <div class="is-size-5 publication-authors">
+            
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=KIDY5pUAAAAJ&hl=en&oi=ao">Yiwei Ma</a><sup>1</sup>,</span>
+            
+              <span class="author-block">
+              <a href="#">Yijun Fan</a><sup>*1</sup>,</span>
+            
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=en&user=xp_rICcAAAAJ">Jiayi Ji</a><sup>*1</sup>,</span>
+
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=en&user=SkV_NNsAAAAJ">Haowei Wang</a><sup>1</sup>,</span>
+
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=en&user=KPMK3B4AAAAJ">Xiaoshuai Sun</a><sup>✧1</sup>,</span>
+  
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=en&user=yw-rcj4AAAAJ">Guannan Jiang</a><sup>2</sup>,</span>
+
+            <span class="author-block">
+              <a href="#">Annan Shu</a><sup>2</sup>,</span>
+
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=en&user=lRSD7PQAAAAJ">Rongrong Ji</a><sup>1</sup></span>
+
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Xiamen University,</span>
+            <span class="author-block"><sup>2</sup>Contemporary Amperex Technology</span>
+
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>*</sup>Equal contribution</span>
+            <span class="author-block"><sup>✧</sup>Corresponding author</span>
+          </div>
+
+
+
+          <div class="column has-text-centered">
+
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>ArXiv comming </span>
+                </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/xmu-xiaoma666/X-Dreamer"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+
+              <!-- Project Link. -->
+              <span class="link-block">
+                <a href="https://xmu-xiaoma666.github.io/Projects/X-Dreamer"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-font-awesome" ></i>
+                  </span>
+                  <span>Project Page</span>
+                  </a>
+              </span>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<div class="my-hr">
+  <hr>
+</div>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <video loop="loop" preload="auto" autoplay muted controls>
+          <source src="./static/our_gif/results1.mp4" type="video/mp4">
+        </video>
+        <div class="content has-text-justified">
+          <p>
+            In recent times, automatic text-to-3D content creation has made significant progress, driven by the
+            development of pretrained 2D diffusion models. Existing text-to-3D methods typically optimize the 3D
+            representation to ensure that the rendered image aligns well with the given text, as evaluated by the
+            pretrained 2D diffusion model. Nevertheless, a substantial domain gap exists between 2D images and 3D assets,
+            primarily attributed to variations in camera-related attributes and the exclusive presence of foreground objects.
+            Consequently, employing 2D diffusion models directly for optimizing 3D representations may lead to suboptimal outcomes.
+            To address this issue, we present X-Dreamer, a novel approach for high-quality text-to-3D content creation that
+            effectively bridges the gap between text-to-2D and text-to-3D synthesis. The key components of X-Dreamer
+            are two innovative designs: Camera-Guided Low-Rank Adaptation (CG-LoRA) and Attention-Mask Alignment (AMA) Loss. CG-LoRA dynamically incorporates camera information into the pretrained diffusion models by
+            employing camera-dependent generation for trainable parameters. This integration enhances the alignment between
+            the generated 3D assets and the camera’s perspective. AMA loss guides the attention map of the pretrained
+            diffusion model using the binary mask of the 3D objects, prioritizing the creation of the foreground object.
+            This module ensures that the model focuses on generating accurate and detailed foreground objects.
+            Extensive evaluations demonstrate the effectiveness of our proposed method compared to existing text-to-3D
+            approaches.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <hr>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="content has-text-justified">
+          <p>We've crafted a succinct video to enhance your comprehension of our work.</p>
+        </div>
+        <video preload="auto" controls>
+          <source src="./static/our_gif/video1.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <hr>
+
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Method</h2>
+        <img src="./static/our_gif/pipeline.png">
+        <div class="content has-text-justified">
+          <p>
+            Overview of the proposed X-Dreamer, which consists of two main stages: geometry learning and appearance
+            learning. For geometry learning, we employ DMT<font size="2">ET</font>  as the 3D representation and initialize it with a
+            3D ellipsoid using the mean squared error (MSE) loss. Subsequently, we optimize DMT<font size="2">ET</font> and CG-LoRA using the
+            Score Distillation Sampling (SDS) loss and our proposed Attention-Mask Alignment (AMA) loss to ensure the
+            alignment between the 3D representation and the input text prompt. For appearance learning, we leverage
+            bidirectional reflectance distribution function (BRDF) modeling. Specifically, we utilize an MLP with
+            trainable parameters to predict surface materials. Similar to the geometry learning stage, we optimize the
+            trainable parameters of MLP and CG-LoRA using the SDS loss and the AMA loss to achieve alignment between the 3D representation and
+            the text prompt.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Method. -->
+
+
+    <hr>
+
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Example generated objects</h2>
+        <div class="content has-text-justified">
+          <p>
+            We conduct the experiments using four Nvidia RTX 3090 GPUs and the PyTorch library. To calculate the SDS
+            loss, we utilize the Stable Diffusion implemented by Hugging Face Diffusers. For the DMT<font size="2">ET</font>
+            and material encoder, we implement them as a two-layer MLP and a single-layer MLP, respectively, with a hidden dimension
+            of 32. We optimize X-Dreamer for 2000 iterations for geometry learning and 1000 iterations for appearance learning.
+          </p>
+          <h2 class="title is-4">Text-to-3D generation from an ellipsoid</h2>
+          <p>
+            We present representative results of X-Dreamer for text-to-3D generation, utilizing an
+            ellipsoid as the initial geometry.
+          </p>
+        </div>
+        <table>
+          <tr>
+            <td><img src="./static/our_gif/vase_shaded.gif"></td>
+            <td><img src="./static/our_gif/vase_normal.gif"></td>
+            <td><img style="width:90%;" src="./static/our_gif/cabbage_shaded.gif"></td>
+            <td><img style="width:90%;" src="./static/our_gif/cabbage_normal.gif"></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">A DSLR photo of a blue and white porcelain vase, highly detailed, 8K, HD.</td>
+            <td colspan="2" align="center">A cabbage, highly detailed.</td>
+          </tr>
+
+          <tr>
+            <td><img style="width:90%;" src="./static/our_gif/cupcake_shaded.gif"></td>
+            <td><img style="width:90%;" src="./static/our_gif/cupcake_normal.gif"></td>
+            <td><img src="./static/our_gif/macaron_shaded.gif"></td>
+            <td><img src="./static/our_gif/macaron_normal.gif"></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">A chocolate cupcake, highly detailed.</td>
+            <td colspan="2" align="center">A DSLR photo of a macaron, 8K, HD, high resolution.</td>
+          </tr>
+
+          <tr>
+            <td><img src="./static/our_gif/bread_shaded.gif"></td>
+            <td><img src="./static/our_gif/bread_normal.gif">
+            <td><img src="./static/our_gif/cookies_shaded.gif"></td>
+            <td><img src="./static/our_gif/cookies_normal.gif"></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">A sliced loaf of fresh bread.</td>
+            <td colspan="2" align="center">A plate piled high with chocolate chip cookies.</td>
+          </tr>
+
+          <tr>
+            <td><br><img style="width:95%;" src="./static/our_gif/pear_shaded.gif"></td>
+            <td><br><img style="width:95%;" src="./static/our_gif/pear_normal.gif"></td>
+            <td><br><img src="./static/our_gif/rocket_shaded.gif"></td>
+            <td><br><img src="./static/our_gif/rocket_normal.gif"></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">A DSLR photo of a pear, highly detailed, 8K, HD.</td>
+            <td colspan="2" align="center">A rocket.</td>
+          </tr>
+
+          <tr>
+            <td><img style="width:90%;" src="./static/our_gif/hamburger_shaded.gif"></td>
+            <td><img style="width:90%;" src="./static/our_gif/hamburger_normal.gif"></td>
+            <td><img src="./static/our_gif/corn_shaded.gif"></td>
+            <td><img src="./static/our_gif/corn_normal.gif"></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">A hamburger.</td>
+            <td colspan="2" align="center">A DSLR photo of a corn, highly detailed, 8K, HD.</td>
+          </tr>
+        </table>
+        <p><span>&nbsp</span></p>
+        <span>&nbsp</span>
+        <div class="content has-text-justified">
+          <h2 class="title is-4">Text-to-3D generation from coarse-grained meshes</h2>
+          <p>
+            X-Dreamer also supports text-based mesh geometry editing and is capable of delivering excellent results.
+          </p>
+        </div>
+        <table>
+          <tr>
+            <td style="position:relative;">
+              <img src="./static/our_gif/chess.png" height="512" width="512">
+              <div style="position:absolute;top:50%;right:5px;transform:translate(0,-50%);">
+                <svg width="40" height="20">
+                  <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#FFB6C1"/>
+                      <stop offset="100%" stop-color="#FFA07A"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M5,10 L30,10" stroke="url(#grad1)" stroke-width="4" marker-end="url(#arrowhead)"/>
+                  <defs>
+                    <marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                      <path d="M 0 0 L 10 5 L 0 10 z" fill="url(#grad1)" />
+                    </marker>
+                  </defs>
+                </svg>
+              </div>
+            </td>
+            <td><img src="./static/our_gif/chess_shaded.gif"> </td>
+            <td><img src="./static/our_gif/chess_normal.gif"></td>
+          </tr>
+          <tr>
+            <td colspan="1" align="center"></td>
+            <td colspan="2" align="center">A beautifully carved wooden queen chess piece.
+            <br></td>
+          </tr>
+        </table>
+
+        <table>
+          <tr>
+            <td style="position:relative;">
+              <img src="static/our_gif/head.png" height="512" width="512">
+              <div style="position:absolute;top:50%;right:5px;transform:translate(0,-50%);">
+                <svg width="40" height="20">
+                  <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#FFB6C1"/>
+                      <stop offset="100%" stop-color="#FFA07A"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M5,10 L30,10" stroke="url(#grad1)" stroke-width="4" marker-end="url(#arrowhead)"/>
+                  <defs>
+                    <marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                      <path d="M 0 0 L 10 5 L 0 10 z" fill="url(#grad1)" />
+                    </marker>
+                  </defs>
+                </svg>
+              </div>
+            </td>
+            <td><img src="./static/our_gif/Obama_shaded.gif" height="480" width="480"></td>
+            <td><img src="./static/our_gif/Obama1_normal.gif" height="480" width="480"></td>
+          </tr>
+          <tr>
+            <td colspan="1" align="center"></td>
+            <td colspan="2" align="center">Barack Obama's head.
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Different lighting conditions</h2>
+        <div class="content has-text-justified">
+          <p>
+            We demonstrate how swapping the HDR environment map results in diverse lighting, thereby creating
+            various reflective effects on the generated 3D assets in X-Dreamer.
+          </p>
+        </div>
+        <table>
+          <tr>
+            <td class="title is-5" colspan="9" align="center">Environment map</td>
+          </tr>
+          <tr>
+            <td><span>&nbsp</span></td>
+          </tr>
+          <tr>
+            <td><img src="./static/our_gif/environment0.png"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/environment1.png"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/environment2.png"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/environment3.png"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/environment4.png"></td>
+          </tr>
+          <tr>
+            <td><span>&nbsp</span></td>
+          </tr>
+          <tr>
+            <td><img style="width:20%;"src="./static/our_gif/arrow.png"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img style="width:20%;" src="./static/our_gif/arrow.png"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img style="width:20%;" src="./static/our_gif/arrow.png"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img style="width:20%;" src="./static/our_gif/arrow.png"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img style="width:20%;" src="./static/our_gif/arrow.png"></td>
+          </tr>
+          <tr>
+            <td><img src="./static/our_gif/cowboy2_lit0.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/cowboy2_lit1.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/cowboy2_lit2.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/cowboy2_lit3.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/cowboy2_lit4.gif"></td>
+          </tr>
+          <tr>
+            <td colspan="9" align="center">A DSLR photo of a brown cowboy hat.</td>
+          </tr>
+           <tr>
+            <td><img src="./static/our_gif/Messi1_strategy4_lit0.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/Messi1_strategy4_lit1.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/Messi1_strategy4_lit2.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/Messi1_strategy4_lit3.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/Messi1_strategy4_lit4.gif"></td>
+          </tr>
+          <tr>
+            <td colspan="9" align="center">Messi's head, highly detailed, 8K, HD.</td>
+          </tr>
+          <tr>
+            <td><img src="./static/our_gif/fox1_lit0.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/fox1_lit1.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/fox1_lit2.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/fox1_lit3.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/fox1_lit4.gif"></td>
+          </tr>
+          <tr>
+            <td colspan="9" align="center">A DSLR photo of a fox, highly detailed.</td>
+          </tr>
+          <tr>
+            <td><img src="./static/our_gif/rose_lit0.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/rose_lit1.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/rose_lit2.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/rose_lit3.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/rose_lit4.gif"></td>
+          </tr>
+          <tr>
+            <td colspan="9" align="center">A DSLR photo of red rose, highly detailed, 8K, HD.</td>
+          </tr>
+          <tr>
+            <td><img src="./static/our_gif/mouse2_lit0.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/mouse2_lit1.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/mouse2_lit2.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/mouse2_lit3.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/mouse2_lit4.gif"></td>
+          </tr>
+          <tr>
+            <td colspan="9" align="center">A marble bust of a mouse.</td>
+          </tr>
+          <tr>
+            <td><img src="./static/our_gif/saguaro2_lit0.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/saguaro2_lit1.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/saguaro2_lit2.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/saguaro2_lit3.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/saguaro2_lit4.gif"></td>
+          </tr>
+          <tr>
+            <td colspan="9" align="center">A small saguaro cactus planted in a clay pot.</td>
+          </tr>
+          <tr>
+            <td><img src="./static/our_gif/vase2_strategy1_lit0.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/vase2_strategy1_lit1.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/vase2_strategy1_lit2.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/vase2_strategy1_lit3.gif"></td>
+            <td><img src="./static/our_gif/white.png"></td>
+            <td><img src="./static/our_gif/vase2_strategy1_lit4.gif"></td>
+          </tr>
+          <tr>
+            <td colspan="9" align="center">A DSLR photo of a vase, highly detailed, 8K, HD.</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Editing process</h2>
+        <div class="content has-text-justified">
+          <p>
+            We demonstrate the editing process of the geometry and appearance of 3D assets in X-Dreamer using an
+            ellipsoid and coarse-grained guided meshes as geometric shapes for initialization, respectively.
+          </p>
+        </div>
+        <table>
+          <tr>
+            <td class="title is-5" colspan="2" align="center">From an ellipsoid</td>
+            <td class="title is-5" colspan="2" align="center">From coarse-grained guided meshes</td>
+          </tr>
+          <tr>
+            <td>
+              <video preload="auto" controls>
+                <source src="./static/our_gif/vase_geometry1.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video preload="auto" controls>
+                <source src="./static/our_gif/vase_appearance1.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video preload="auto" controls>
+                <source src="./static/our_gif/angel_geometry1.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video preload="auto" controls>
+                <source src="./static/our_gif/angel_appearance1.mp4" type="video/mp4">
+              </video>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">A DSLR photo of a blue and white porcelain vase, highly detailed, 8K, HD.</td>
+            <td colspan="2" align="center">A marble bust of an angel, 3D model, high resolution.</td>
+          </tr>
+          <tr>
+            <td>
+              <video preload="auto" controls>
+                <source src="./static/our_gif/pancakes_geometry1.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video preload="auto" controls>
+                <source src="./static/our_gif/pancakes_appearance1.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video preload="auto" controls>
+                <source src="./static/our_gif/army_geometry1.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video preload="auto" controls>
+                <source src="./static/our_gif/army_appearance1.mp4" type="video/mp4">
+              </video>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">A stack of pancakes covered in maple syrup.</td>
+            <td colspan="2" align="center">A DSLR photo of the Terracotta Army, 3D model, high resolution.</td>
+          </tr>
+        </table>
+        </div>
+      </div>
+    <hr>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Comparison</h2>
+        <div class="content has-text-justified">
+          <p>
+            We compared X-Dreamer with four state-of-the-art (SOTA) methods: DreamFusion, Magic3D, Fantasia3D, and
+            ProlificDreamer. The results are shown below:
+          </p>
+        </div>
+
+
+        <table>
+          <tr>
+            <td align="center">DreamFusion</td>
+            <td align="center">Magic3D</td>
+            <td align="center">Fantasia3D</td>
+            <td align="center">ProlificDreamer</td>
+            <td align="center">&nbspX-Dreamer</td>
+          </tr>
+          <tr>
+            <td><img style="width:90%;" src="./static/our_gif/Batman_dreamfusion-sd_shaded.gif"></td>
+            <td><img style="width:90%;" src="./static/our_gif/Batman_magic3d-refine-sd_shaded.gif"></td>
+            <td><br><img src="./static/our_gif/Batman_fantasia3d-texture_shaded.gif" height="800" width="800"></td>
+            <td><img src="./static/our_gif/Batman_prolificdreamer-texture_shaded.gif"></td>
+            <td><br><img src="./static/our_gif/Batman_shaded.gif " height="570" width="570"></td>
+          </tr>
+          <tr>
+            <td><img style="width:90%;" src="./static/our_gif/Batman_dreamfusion-sd_normal.gif"></td>
+            <td><img style="width:90%;" src="./static/our_gif/Batman_magic3d-refine-sd_normal.gif"></td>
+            <td><br><img src="./static/our_gif/Batman_fantasia3d-texture_normal.gif" height="800" width="800"></td>
+            <td><img src="./static/our_gif/Batman_prolificdreamer-texture_normal.gif"></td>
+            <td><br><img src="./static/our_gif/Batman_normal.gif" height="570" width="570"></td>
+          </tr>
+          <tr>
+            <td colspan="5" align="center">A 3D rendering of Batman, highly detailed.</td>
+          </tr>
+          <tr>
+            <td><img style="width:90%;" src="./static/our_gif/cat_dreamfusion-sd_shaded.gif"></td>
+            <td><img src="./static/our_gif/cat_magic3d-refine-sd_shaded.gif" height="950" width="950"></td>
+            <td><br><img style="width:80%;" src="./static/our_gif/cat_fantasia3d-texture_shaded.gif"></td>
+            <td><img src="./static/our_gif/cat_prolificdreamer-texture_shaded.gif"></td>
+            <td><br><img src="./static/our_gif/cat_shaded.gif" height="550" width="550"></td>
+          </tr>
+          <tr>
+            <td><img style="width:90%;" src="./static/our_gif/cat_dreamfusion-sd_normal.gif"></td>
+            <td><img src="./static/our_gif/cat_magic3d-refine-sd_normal.gif" height="950" width="950"></td>
+            <td><br><img style="width:80%;" src="./static/our_gif/cat_fantasia3d-texture_normal.gif"></td>
+            <td><img src="./static/our_gif/cat_prolificdreamer-texture_normal.gif"></td>
+            <td><br><img src="./static/our_gif/cat_normal.gif" height="550" width="550"></td>
+          </tr>
+          <tr>
+            <td colspan="5" align="center">A cat, highly detailed.</td>
+          </tr>
+
+          <tr>
+            <td><img src="./static/our_gif/garlic_dreamfusion-sd_shaded.gif"></td>
+            <td><br><img src="./static/our_gif/garlic_magic3d-refine-sd_shaded.gif"></td>
+            <td><br><img src="./static/our_gif/garlic_fantasia3d-texture_shaded.gif"></td>
+            <td><br><img src="./static/our_gif/garlic_prolificdreamer-texture_shaded.gif"></td>
+            <td><br><br><br><img style="width:90%;" src="./static/our_gif/garlic_shaded.gif"></td>
+          </tr>
+          <tr>
+            <td><img src="./static/our_gif/garlic_dreamfusion-sd_normal.gif"></td>
+            <td><br><img src="./static/our_gif/garlic_magic3d-refine-sd_normal.gif"></td>
+            <td><br><img src="./static/our_gif/garlic_fantasia3d-texture_normal.gif"></td>
+            <td><br><img src="./static/our_gif/garlic_prolificdreamer-texture_normal.gif"></td>
+            <td><br><br><br><img style="width:90%;" src="./static/our_gif/garlic_normal.gif"></td>
+          </tr>
+          <tr>
+            <td colspan="5" align="center">Garlic with white skin, highly detailed, 8K, HD.</td>
+          </tr>
+
+          <tr>
+            <td><img style="width:90%;" src="./static/our_gif/pumpkin_dreamfusion-sd_shaded.gif" height="700" width="700"></td>
+            <td><img src="./static/our_gif/pumpkin_magic3d-refine-sd_shaded.gif" height="1000" width="1000"></td>
+            <td><br><img style="width:80%;" src="./static/our_gif/pumpkin_fantasia3d-texture_shaded.gif"></td>
+            <td><img src="./static/our_gif/pumpkin_prolificdreamer-texture_shaded.gif"></td>
+            <td><br><img style="width:90%;" src="./static/our_gif/pumpkin_shaded.gif"></td>
+          </tr>
+          <tr>
+            <td><img style="width:90%;" src="./static/our_gif/pumpkin_dreamfusion-sd_normal.gif" height="700" width="700"></td>
+            <td><img src="./static/our_gif/pumpkin_magic3d-refine-sd_normal.gif" height="1000" width="1000"></td>
+            <td><br><img style="width:80%;" src="./static/our_gif/pumpkin_fantasia3d-texture_normal.gif"></td>
+            <td><img src="./static/our_gif/pumpkin_prolificdreamer-texture_normal.gif"></td>
+            <td><br><img style="width:90%;" src="./static/our_gif/pumpkin_normal.gif"></td>
+          </tr>
+          <tr>
+            <td colspan="5" align="center">A pumpkin, highly detailed, 8K, HD.</td>
+          </tr>
+
+          <tr>
+            <td><img style="width:90%;" src="./static/our_gif/Leonardo_dreamfusion-sd_shaded.gif"></td>
+            <td><img src="./static/our_gif/Leonardo_magic3d-refine-sd_shaded.gif"></td>
+            <td><br><img src="./static/our_gif/Leonardo_fantasia3d-texture_shaded.gif" height="800" width="800"></td>
+            <td><img src="./static/our_gif/Leonardo_prolificdreamer-texture_shaded.gif" height="550" width="550"></td>
+            <td><br><img src="./static/our_gif/Leonardo_shaded.gif" height="600" width="600"></td>
+          </tr>
+          <tr>
+            <td><img style="width:90%;" src="./static/our_gif/Leonardo_dreamfusion-sd_normal.gif"></td>
+            <td><img src="./static/our_gif/Leonardo_magic3d-refine-sd_normal.gif"></td>
+            <td><br><img src="./static/our_gif/Leonardo_fantasia3d-texture_normal.gif" height="800" width="800"></td>
+            <td><img src="./static/our_gif/Leonardo_prolificdreamer-texture_normal.gif" height="550" width="550"></td>
+            <td><br><img src="./static/our_gif/Leonardo1_normal.gif" height="600" width="600"></td>
+          </tr>
+          <tr>
+            <td colspan="5" align="center">A statue of Leonardo DiCaprio's head.</td>
+          </tr>
+
+          <tr>
+            <td><img src="./static/our_gif/Voldemort_dreamfusion-sd_shaded.gif" height="900" width="900"></td>
+            <td><img src="./static/our_gif/Voldemort_magic3d-refine-sd_shaded.gif" height="1000" width="1000"></td>
+            <td><br><img style="width:90%;" src="./static/our_gif/Voldemort_fantasia3d-texture_shaded.gif"></td>
+            <td><img style="width:95%;" src="./static/our_gif/Voldemort_prolificdreamer-texture_shaded.gif"></td>
+            <td><br><img src="./static/our_gif/Voldemort_shaded.gif"></td>
+          </tr>
+          <tr>
+            <td><img src="./static/our_gif/Voldemort_dreamfusion-sd_normal.gif" height="900" width="900"></td>
+            <td><img src="./static/our_gif/Voldemort_magic3d-refine-sd_normal.gif" height="1000" width="1000"></td>
+            <td><br><img style="width:90%;" src="./static/our_gif/Voldemort_fantasia3d-texture_normal.gif"></td>
+            <td><img style="width:95%;" src="./static/our_gif/Voldemort_prolificdreamer-texture_normal.gif"></td>
+            <td><br><img src="./static/our_gif/Voldemort1_normal.gif"></td>
+          </tr>
+          <tr>
+            <td colspan="5" align="center">A DSLR photo of Lord Voldemort's head, highly detailed.</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <h3 class="title">Acknowledgements</h3>
+          <p>
+            The website template was borrowed from <a href="https://nerfies.github.io/">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
