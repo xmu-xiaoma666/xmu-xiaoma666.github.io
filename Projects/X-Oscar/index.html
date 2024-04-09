@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>X-Oscar: A Progressive Framework for High-quality Text-guided 3D Animatable Avatar Generation</title>
+  <link rel="shortcut icon" href="./static/our_mp4/LOGO.ico"/>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+<!--          <img style="width:25%;" src="./static/our_mp4/LOGO.png">-->
+<!--          <p><span>&nbsp</span></p>-->
+<!--          <h1 class="title is-1 publication-title">X-Oscar: A Progressive Framework for High-quality-->
+<!--Text-guided 3D Animatable Avatar Generation</h1>-->
+
+
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title has-text-centered">
+            <div style="display: flex; align-items: center; justify-content: center;">
+              <img id="teaser" width="15%" src="./static/our_mp4/LOGO.png">
+              <b>
+                <span style="font-weight: bold; font-family: Arial, sans-serif; font-size: 78px; text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8); animation: neon-glow 1.5s ease-in-out infinite;"><span style="color:#4285F4;">X</span><span style="color:#EA4538;">-</span><span style="color:#FBBC05;">O</span><span style="color:#4285F4;">s</span><span style="color:#34A853;">c</span><span style="color:#EA4538;">a</span><span style="color:#FBBC05;">r</span></span>
+              </b>
+            </div>
+          </h1>
+          <h2 class="title is-3 publication-title">A Progressive Framework for High-quality Text-guided 3D Animatable Avatar Generation</h2>
+        </div>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            <a href="https://scholar.google.com/citations?user=KIDY5pUAAAAJ&hl=en&oi=ao">Yiwei Ma</a><sup>*1</sup>,</span>
+          
+            <span class="author-block">
+            <a href="#">Zhekai Lin</a><sup>*1</sup>,</span>
+          
+          <span class="author-block">
+            <a href="https://scholar.google.com/citations?hl=en&user=xp_rICcAAAAJ">Jiayi Ji</a><sup>1</sup>,</span>
+
+          <span class="author-block">
+            <a href="#">Yijun Fan</a><sup>1</sup>,</span>
+
+          <span class="author-block">
+            <a href="https://scholar.google.com/citations?hl=en&user=KPMK3B4AAAAJ">Xiaoshuai Sun</a><sup>✧1</sup>,</span>
+
+          <span class="author-block">
+            <a href="https://scholar.google.com/citations?hl=en&user=lRSD7PQAAAAJ">Rongrong Ji</a><sup>1</sup></span>
+
+        </div>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block"><sup>1</sup>Xiamen University</span>
+        </div>
+        <div class="is-size-5 publication-authors">
+          <span class="author-block"><sup>*</sup>Equal contribution</span>
+          <span class="author-block"><sup>✧</sup>Corresponding author</span>
+        </div>
+
+
+
+        <div class="column has-text-centered">
+
+          <div class="publication-links">
+            <!-- PDF Link. -->
+            <span class="link-block">
+              <a href="#"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>ArXiv</span>
+              </a>
+            </span>
+
+            <!-- Code Link. -->
+            <span class="link-block">
+              <a href="https://github.com/LinZhekai/X-Oscar"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+                </a>
+            </span>
+
+
+            <!-- Project Link. -->
+            <span class="link-block">
+              <a href="https://xmu-xiaoma666.github.io/Projects/X-Oscar"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-font-awesome" ></i>
+                </span>
+                <span>Project Page</span>
+                </a>
+            </span>
+
+          </div>
+
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="my-hr">
+  <hr>
+</div>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <video loop="loop" preload="auto" autoplay muted controls>
+                <source src="./static/our_mp4/intro_view.mp4" type="video/mp4">
+        </video>
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            This paper presents X-Oscar, a progressive framework designed for generating high-quality text-guided avatars. While notable advancements have
+            been made in this field, existing methods suffer from several limitations, such as producing over-saturated and low-quality output. To create
+            high-quality 3D avatars, X-Oscar follows a “Geometry→Texture→Animation” paradigm. This framework enables the gradual generation of avatars,
+            reducing the complexity of optimization through step-by-step learning. To address the issue of over-saturation, we propose Adaptive
+            Variational Parameter (AVP), which represents a 3D avatar as a distribution rather than fixed parameters. Additionally, we introduce
+            Avatar-aware Score Distillation Sampling (ASDS), a novel technique that incorporates avatar-aware noise into the rendered image instead
+            of random noise. This modification significantly enhances the quality of the generated results. Extensive evaluations have been
+            conducted to assess the effectiveness of X-Oscar in generating complex shapes, appearances, and poses of 3D avatars.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Method. -->
+    <hr>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Method</h2>
+          <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/overview - video.mp4" type="video/mp4">
+          </video>
+        <div class="content has-text-justified">
+          <p>
+            Overview of X-Oscar, which consists of geometry modeling, appearance modeling, and animation refinement.
+            X-Oscar is a progressive framework for text-to-avatar generation that follows a “Geometry→Texture→Animation”
+            paradigm. This approach decomposes the complex task of avatar generation into a series of manageable subtasks,
+            each focusing on a specific aspect of the avatar’s creation. In geometry modeling, we optimize the geometry of
+            the avatars, represented by the SMPL-Xmodel, to align with the input text prompt by employing a differentiable
+            rendering pipeline. After geometry modeling, we obtain a mesh that matches the prompt in shape. In appearance
+            modeling, we represent the appearance of the result by optimizing an albedo map. In animation refinement,
+            we change the pose of the avatar and optimize both geometry and appearance to address some inevitable
+            obstructed parts. By minimizing the animation loss, we can refine the geometry and appearance of the avatar
+            in various poses, resulting in improved quality and reduced artifacts in the final result.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Method. -->
+
+
+    <hr>
+
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Avatar Creation</h2>
+        <div class="content has-text-justified">
+          <p>
+            X-Oscar enables the creation of delicate animatable 3D avatars from text prompts.
+          </p>
+          <h2 class="title is-4">Generation process</h2>
+          <p>
+            We demonstrate the generation process of X-Oscar. It can be observed that the objects generated by X-Oscar
+            exhibit high quality and fidelity.
+          </p>
+        </div>
+        <table>
+          <tr>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/Anna.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/Warren Buffett.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/Hermoine Granger.mp4" type="video/mp4">
+              </video>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">Anna in Frozen</td>
+            <td align="center">Warren Buffett</td>
+            <td align="center">Hermoine Granger</td>
+          </tr>
+          <tr>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/Ada Wong.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/Aragorn from The Lord of the Rings.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/Flynn Rider.mp4" type="video/mp4">
+              </video>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">Ada Wong</td>
+            <td align="center">Aragorn from The Lord of the Rings</td>
+            <td align="center">Flynn Rider</td>
+          </tr>
+        </table>
+        <p><span>&nbsp</span></p>
+        <span>&nbsp</span>
+        <div class="content has-text-justified">
+          <h2 class="title is-4">Canonical Avatars</h2>
+          <p>
+            Exclusively guided by a textual depiction, X-Oscar possesses the capability to produce a superior-quality canonical 3D avatar.
+          </p>
+        </div>
+        <table>
+          <tr>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/XOscar_Aladdin_ep0200_midonly.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/XOscar_FrodoBaggins_ep0200_midonly.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/XOscar_Batman_ep0200_midonly.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/XOscar_CaptainAmerica_ep0200_midonly.mp4" type="video/mp4">
+              </video>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">Aladdin in Aladdin</td>
+            <td align="center">Frodo Baggins from The Lord of the Rings</td>
+            <td align="center">Batman</td>
+            <td align="center">Captain America</td>
+          </tr>
+
+          <tr>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/XOscar_gardener_sd20_ep0200_midonly.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/XOscar_Geralt_ep0200_midonly.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/XOscar_IronMan_ep0200_midonly.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/XOscar_JeffBezos_ep0200_midonly.mp4" type="video/mp4">
+              </video>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">Gardener</td>
+            <td align="center">Geralt of Rivia</td>
+            <td align="center">IronMan</td>
+            <td align="center">Jeff Bezos</td>
+          </tr>
+
+          <tr>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/XOscar_knight_ep0200_midonly.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/XOscar_Link_ep0200_midonly.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/XOscar_Mulan_ep0200_midonly.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/XOscar_StevenPaulJobs_ep0200_midonly.mp4" type="video/mp4">
+              </video>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">Knight</td>
+            <td align="center">Link from Zelda</td>
+            <td align="center">Mulan</td>
+            <td align="center">Steven Paul Jobs</td>
+          </tr>
+        </table>
+
+        <p><span>&nbsp</span></p>
+        <span>&nbsp</span>
+        <div class="content has-text-justified">
+          <h2 class="title is-4">Animatable Avatars (Same Pose)</h2>
+          <p>
+            In the presence of motion sequences, X-Oscar demonstrates the capacity to animate 3D avatars.
+          </p>
+          <video loop="loop" preload="auto" autoplay muted controls>
+                <source src="./static/our_mp4/motion_video.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p><span>&nbsp</span></p>
+        <span>&nbsp</span>
+        <div class="content has-text-justified">
+          <h2 class="title is-4">Animatable Avatars (Different Poses)</h2>
+          <p>
+            X-Oscar has the capability to generate 3D human avatars across diverse poses while preserving superior
+            texture and geometry standards.
+          </p>
+        </div>
+          <video loop="loop" preload="auto" autoplay muted style="width: 70%;">
+            <source src="./static/our_mp4/motion_video2.mp4" type="video/mp4">
+          </video>
+        <p><span>&nbsp</span></p>
+        <span>&nbsp</span>
+        <div class="content has-text-justified">
+          <h2 class="title is-4">Motion Comparison</h2>
+        </div>
+          <video loop="loop" preload="auto" autoplay muted controls>
+            <source src="./static/our_mp4/motion_compare.mp4" type="video/mp4">
+          </video>
+          <p>
+            (The motivation of AvatarCLIP is generated by the professional tool Mixamo)
+          </p>
+        <p><span>&nbsp</span></p>
+        <span>&nbsp</span>
+        <div class="content has-text-justified">
+          <h2 class="title is-4">Application: Virtual Try-On</h2>
+          <p>
+            X-Oscar can facilitate avatar customization through text editing, as depicted in the following results.
+            It is evident that X-Oscar is capable of generating realistic objects.
+          </p>
+        </div>
+        <table>
+          <tr>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/JackMa1.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/JackMa3.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/JackMa4.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/JackMa5.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/JackMa6.mp4" type="video/mp4">
+              </video>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">Jack Ma wearing a flowing sky-blue sundress</td>
+            <td align="center">&nbsp Jack Ma wearing a blue beanie, a black leather jacket, and blue jeans</td>
+            <td align="center">Jack Ma wearing a blue shirt</td>
+            <td align="center">Jack Ma wearing a down jacket</td>
+            <td align="center">&nbsp Jack Ma wearing a green t-shirt and a blue jeans</td>
+          </tr>
+          <tr>
+            <td colspan="5" align="center">&nbsp</td>
+          </tr>
+          <tr>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/JackMa7.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/JackMa9.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/JackMa10.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/JackMa11.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video loop="loop" preload="auto" autoplay muted>
+                <source src="./static/our_mp4/JackMa12.mp4" type="video/mp4">
+              </video>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">Jack Ma wearing a pink jacket</td>
+            <td align="center">Jack Ma wearing a suit</td>
+            <td align="center">Jack Ma wearing fitness clothing</td>
+            <td align="center">Jack Ma wearing ski clothes</td>
+            <td align="center">Jack Ma wearing a navy blue beanie, a blue sweater, and gray trousers</td>
+          </tr>
+        </table>
+
+        <p><span>&nbsp</span></p>
+        <span>&nbsp</span>
+        <div class="content has-text-justified">
+          <h2 class="title is-4">Application: Edit result in Blender software</h2>
+          <p>
+            X-Oscar's high-quality 3D model can seamlessly undergo edits using popular 3D graphics and image software like Blender.
+          </p>
+          <video loop="loop" preload="auto" autoplay muted controls>
+                <source src="./static/our_mp4/BLENDER_CUT - Trim.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+</body>
+</html>
