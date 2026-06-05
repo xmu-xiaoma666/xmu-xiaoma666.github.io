@@ -6,7 +6,7 @@ function setLang(lang){
   document.documentElement.setAttribute('lang', lang==='zh'?'zh-CN':'en');
 }
 (function(){
-  var saved = 'zh';
-  try{ saved = localStorage.getItem('site_lang') || 'zh'; }catch(e){}
+  var saved = 'en';
+  try{ saved = localStorage.getItem('site_lang') || 'en'; }catch(e){}
   setLang(saved);
 })();
