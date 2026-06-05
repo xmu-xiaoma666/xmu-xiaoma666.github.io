@@ -7,93 +7,82 @@
   <link href="./imgs/tlzdoc.css" rel="stylesheet" type="text/css">
   <title>Yiwei Ma's Homepage--马祎炜的个人主页</title>
   <meta name="GENERATOR" content="MSHTML 11.00.10570.1001">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&display=swap" rel="stylesheet">
+  <link href="./imgs/site.css" rel="stylesheet" type="text/css">
 </head>
 
 
-<body>
-  <!-- <a href="https://clustrmaps.com/site/1bxq8"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=tHY6dMge80_EQ0tZXF-IBSUfo5lOCsLQpXe2ZsD46Hw&cl=ffffff" /></a> -->
+<body data-lang="zh">
+  <div class="lang-toggle">
+    <button type="button" id="btn-zh" onclick="setLang('zh')">中文</button>
+    <button type="button" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
 
-  <table style="margin: auto;">
-    <tbody>
-
-
-    <!-- <tr></tr> -->
-
-
-
-    <div style="float: left; width: 70%; display: flex; align-items: center; justify-content: center; margin-top: 3%;">
-      <tr>
-          <td>
-            <img width="130" src="./imgs/YWM2.jpg" border="3">
-          </td>	
-
-        <td width="670">
-
-            <div id="toptitle" style="margin-left: 5%;">
-            <h1>Yiwei Ma &nbsp; 马祎炜<a name="top"></a></h1>
-
-          <h3>Final-year Ph.D Student at Xiamen University (on the job market)        </h3>
-            <p> 
-            <br> Email:
-            <a href="yiweima@stu.xmu.edu.cn">yiweima@stu.xmu.edu.cn</a>		
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      &nbsp;&nbsp;<a href="https://github.com/xmu-xiaoma666" target="_blank">[Github]</a>
-      &nbsp;&nbsp;<a href="https://scholar.google.com.tw/citations?view_op=list_works&hl=zh-CN&user=KIDY5pUAAAAJ&gmla=AJsN-F4drnWeD3U5c9Th0ilgoeYuA0ovsr6N0yHUPVd_p2nM8vLRZVhrULm2rX70XnaGQ87xDo_CVYZKyWNmA3-TorzrKBZY84fX0tg-Q3v68HIvYA3y-GY_fzt515GksJC0TgSvPyxK" target="_blank">[Google Scholar]</a>	
-            <br>
-            <br>
-          </p>
-        </div>
-
-          </td>
-        </tr>
+  <div class="hero">
+    <img class="hero-photo" src="./imgs/YWM2.jpg" alt="Yiwei Ma">
+    <div id="toptitle" class="hero-info">
+      <h1>Yiwei Ma &nbsp; 马祎炜<a name="top"></a></h1>
+      <h3><span class="lang-en">Algorithm Engineer @ <a href="https://studio.dots.ai/?aggregation_id=2" target="_blank">dots</a>, Xiaohongshu</span><span class="lang-zh">算法工程师 @ 小红书 <a href="https://studio.dots.ai/?aggregation_id=2" target="_blank">dots</a></span></h3>
+      <p class="hero-tagline"><span class="lang-en">Research focus:</span><span class="lang-zh">研究方向：</span>&nbsp;<span class="focus-tag"><span class="lang-en">Multimodal Large Language Models</span><span class="lang-zh">多模态大语言模型</span></span><span class="focus-tag"><span class="lang-en">Text-to-Image Pretraining</span><span class="lang-zh">文生图预训练</span></span></p>
+      <div class="contact-links">
+        <a href="https://github.com/xmu-xiaoma666" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.29-.01-1.05-.02-2.06-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.39 1.24-3.23-.13-.31-.54-1.53.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.05.14 3 .4 2.29-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.87.12 3.18.77.84 1.23 1.92 1.23 3.23 0 4.62-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22 0 1.61-.01 2.91-.01 3.3 0 .32.21.7.82.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>GitHub</a>
+        <a href="https://scholar.google.com.tw/citations?view_op=list_works&hl=zh-CN&user=KIDY5pUAAAAJ&gmla=AJsN-F4drnWeD3U5c9Th0ilgoeYuA0ovsr6N0yHUPVd_p2nM8vLRZVhrULm2rX70XnaGQ87xDo_CVYZKyWNmA3-TorzrKBZY84fX0tg-Q3v68HIvYA3y-GY_fzt515GksJC0TgSvPyxK" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L1 8l11 6 9-4.91V17h2V8L12 2zm0 13.5L4 11v3.5l8 4.37 8-4.37V11l-8 4.5z"/></svg>Google Scholar</a>
+        <a href="https://www.semanticscholar.org/author/Yiwei-Ma/2161655780" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.78 6.62c-1.93 1.2-3.6 2.78-4.93 4.66-.86-.86-1.8-1.64-2.8-2.32l.86-1.3c.78.52 1.52 1.1 2.2 1.74 1.2-1.46 2.62-2.72 4.2-3.74l.47.96zM7.2 9.5c1.74 1.04 3.3 2.36 4.6 3.9 1.36-2.06 3.2-3.78 5.36-5.02V6.5H7.2v3z"/></svg>Semantic Scholar</a>
+        <a href="https://dblp.org/pid/184/9558.html" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 2h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm8 1.5V7h3.5L14 3.5zM8 11h8v1.5H8V11zm0 3h8v1.5H8V14zm0 3h6v1.5H8V17z"/></svg>DBLP</a>
       </div>
+      <div class="contact-email">✉ mayiwei1998@163.com</div>
+    </div>
+  </div>
 
-      <div style="float: right; width: 20%; text-align: right;">
-        <div style="width: 60%; margin: 0 auto; display: flex; justify-content: center;">
-                  <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=tHY6dMge80_EQ0tZXF-IBSUfo5lOCsLQpXe2ZsD46Hw"></script>
-        </div>
-
-        <div style=" margin: 0 auto; display: flex; justify-content: center; transform: scale(0.7);">
-            <a href="https://info.flagcounter.com/HDaJ"><img src="https://s11.flagcounter.com/count2/HDaJ/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
-        </div>
-  </tbody>
-  </table>
   <div id="layout-content" style="margin-top: 25px;">
 
 
-<h4>[<a style=" color:#9D849A;" href="#biography">Biography</a>] [<a style=" color:#9D849A;" href="#news">Latest News</a>] 
-  [<a style=" color:#9D849A;" href="#publications">Publications</a>] 
-[<a style=" color:#9D849A;" href="#projects">Projects</a>] 
-[<a style=" color:#9D849A;" href="#awards">Major Awards</a>] 
-[<a style=" color:#9D849A;" href="#patent">Patent</a>] 
-[<a style=" color:#9D849A;" href="#activities">Professional Activities</a>]</h4>
+<h4>
+  <span class="lang-en">[<a style=" color:#9D849A;" href="#biography">Biography</a>] [<a style=" color:#9D849A;" href="#news">Latest News</a>] [<a style=" color:#9D849A;" href="#publications">Publications</a>] [<a style=" color:#9D849A;" href="#projects">Projects</a>] [<a style=" color:#9D849A;" href="#awards">Major Awards</a>] [<a style=" color:#9D849A;" href="#patent">Patent</a>] [<a style=" color:#9D849A;" href="#activities">Professional Activities</a>]</span>
+  <span class="lang-zh">[<a style=" color:#9D849A;" href="#biography">个人简介</a>] [<a style=" color:#9D849A;" href="#news">最新动态</a>] [<a style=" color:#9D849A;" href="#publications">论文成果</a>] [<a style=" color:#9D849A;" href="#projects">代表项目</a>] [<a style=" color:#9D849A;" href="#awards">主要奖项</a>] [<a style=" color:#9D849A;" href="#patent">发明专利</a>] [<a style=" color:#9D849A;" href="#activities">学术活动</a>]</span>
+</h4>
 
-<h2>Biography<a name="biography"></a>&nbsp;&nbsp;&nbsp;<a style=" color:#9D849A; font-size:15px;" href="#top">[back top]</a></h2>
-  <p style="text-indent:2em;"> I am currently a final-year Ph.D student in <a href="https://cogsci.xmu.edu.cn/" target="_blank">Department of Artificial Intelligence</a>, <a href="https://informatics.xmu.edu.cn/" target="_blank">School of Informatics</a>, <a href="https://en.xmu.edu.cn/" target="_blank">Xiamen University</a>, advised by <a href="https://mac.xmu.edu.cn/rrji_en/" target="_blank">Prof. Rongrong Ji</a> and <a href="https://sites.google.com/view/xssun" target="_blank">Prof. Xiaoshuai Sun</a>. <b>I am actively looking for job opportunities (industry / faculty / postdoc), please feel free to contact me via email.</b>
+<h2><span class="lang-en">Biography</span><span class="lang-zh">个人简介</span><a name="biography"></a>&nbsp;&nbsp;&nbsp;<a style=" color:#9D849A; font-size:15px;" href="#top"><span class="lang-en">[back top]</span><span class="lang-zh">[返回顶部]</span></a></h2>
+  <p class="lang-en" style="text-indent:2em;"> I am an Algorithm Engineer at the <a href="https://studio.dots.ai/?aggregation_id=2" target="_blank">dots</a> team of Xiaohongshu (RED), specializing in <b>Multimodal Large Language Models</b> and <b>Text-to-Image Pretraining</b>. I received my Ph.D. from the <a href="https://cogsci.xmu.edu.cn/" target="_blank">Department of Artificial Intelligence</a>, <a href="https://informatics.xmu.edu.cn/" target="_blank">School of Informatics</a>, <a href="https://en.xmu.edu.cn/" target="_blank">Xiamen University</a>, advised by <a href="https://mac.xmu.edu.cn/rrji_en/" target="_blank">Prof. Rongrong Ji</a> and <a href="https://sites.google.com/view/xssun" target="_blank">Prof. Xiaoshuai Sun</a>. <b>Feel free to reach out to me via email.</b>
   </p>
-  <p style="text-indent:2em;">My recent research interests are in Multimodal Large Language Models (MLLMs) and Multimodal Generation.</p>
+  <p class="lang-zh" style="text-indent:2em;"> 我是小红书（RED）<a href="https://studio.dots.ai/?aggregation_id=2" target="_blank">dots</a> 团队的算法工程师，研究方向为<b>多模态大语言模型</b>与<b>文生图预训练</b>。我于<a href="https://en.xmu.edu.cn/" target="_blank">厦门大学</a><a href="https://informatics.xmu.edu.cn/" target="_blank">信息学院</a><a href="https://cogsci.xmu.edu.cn/" target="_blank">人工智能系</a>获得博士学位，师从<a href="https://mac.xmu.edu.cn/rrji_en/" target="_blank">纪荣嵘教授</a>与<a href="https://sites.google.com/view/xssun" target="_blank">孙晓帅教授</a>。<b>欢迎通过邮箱与我联系。</b>
+  </p>
+  <p class="lang-en" style="text-indent:2em;">My recent research interests are in <b>Multimodal Large Language Models (MLLMs)</b> and <b>Text-to-Image Pretraining</b>. I have published 27 papers in top-tier CCF-A/B conferences and journals (17 as first/co-first author, 3 Orals), with 1500+ Google Scholar citations. I serve as an Area Chair for ACM MM 2025 Workshop and as a reviewer for CVPR, NeurIPS, ICLR, ICCV, IEEE TPAMI and other venues. I am also the core developer of the open-source <a href="https://github.com/xmu-xiaoma666/External-Attention-pytorch" target="_blank">External-Attention-pytorch</a> project (12k+ GitHub stars).</p>
+  <p class="lang-zh" style="text-indent:2em;">我近期的研究方向集中在<b>多模态大语言模型（MLLMs）</b>与<b>文生图预训练</b>。已在 CCF-A/B 类顶级会议与期刊发表论文 27 篇（其中一作/共一 17 篇，3 篇 Oral），谷歌学术引用 1500+ 次。担任 ACM MM 2025 Workshop 领域主席，以及 CVPR、NeurIPS、ICLR、ICCV、IEEE TPAMI 等多个会议与期刊的审稿人。同时是开源项目 <a href="https://github.com/xmu-xiaoma666/External-Attention-pytorch" target="_blank">External-Attention-pytorch</a> 的核心开发者（GitHub 12k+ stars）。</p>
 
-<ul>  
-  <li> 09/2023 -- Now: Ph.D. in Intelligence Science and Technology, <a href="https://en.xmu.edu.cn/" target="_blank">Xiamen University</a>, Xiamen, China</li>   
-  <li> 09/2020 -- 06/2023: M.S. in Intelligence Science and Technology, <a href="https://en.xmu.edu.cn/" target="_blank">Xiamen University</a>, Xiamen, China</li>   
-  <li> 12/2021 -- 05/2022: Research Intern, <a href="https://damo.alibaba.com/labs/?goto=1" target="_blank">Alibaba DAMO Academy</a>, Hangzhou, China </li>
+<ul>
+  <li class="lang-en"> 07/2026 -- Now: Algorithm Engineer, <a href="https://studio.dots.ai/?aggregation_id=2" target="_blank">dots</a> team, Xiaohongshu (RED), Hangzhou, China</li>
+  <li class="lang-zh"> 2026.07 -- 至今：算法工程师，小红书（RED）<a href="https://studio.dots.ai/?aggregation_id=2" target="_blank">dots</a> 团队，杭州</li>
+  <li class="lang-en"> 09/2020 -- 06/2026: Combined M.S.-Ph.D. Program in Intelligence Science and Technology, <a href="https://en.xmu.edu.cn/" target="_blank">Xiamen University</a>, Xiamen, China</li>
+  <li class="lang-zh"> 2020.09 -- 2026.06：智能科学与技术 硕博连读，<a href="https://en.xmu.edu.cn/" target="_blank">厦门大学</a>，厦门</li>
+  <li class="lang-en"> 02/2025 -- 06/2025: Research Intern, Alibaba Taotian Group, Hangzhou, China </li>
+  <li class="lang-zh"> 2025.02 -- 2025.06：研究型实习，阿里巴巴淘天集团，杭州</li>
+  <li class="lang-en"> 12/2021 -- 05/2022: Research Intern, <a href="https://damo.alibaba.com/labs/?goto=1" target="_blank">Alibaba DAMO Academy</a>, Hangzhou, China </li>
+  <li class="lang-zh"> 2021.12 -- 2022.05：研究型实习，<a href="https://damo.alibaba.com/labs/?goto=1" target="_blank">阿里巴巴达摩院</a>，杭州</li>
   <!-- <li> 09/2018 -- 06/2021: M.S. in Computer Technology, <a href="https://en.xmu.edu.cn/" target="_blank">Xiamen University</a>, Xiamen, China </li>   -->
   <!-- <li> 09/2016 -- 06/2020: B.S. in Digital Media Technology, <a href="https://english.zstu.edu.cn/" target="_blank">Zhejiang Sci-Tech University</a>, Hangzhou, China </li> -->
 </ul>
 
-<h2>Latest News<a name="news"></a>&nbsp;&nbsp;&nbsp;<a style=" color:#9D849A; font-size:15px;" href="#top">[back top]</a></h2>
+<h2><span class="lang-en">Latest News</span><span class="lang-zh">最新动态</span><a name="news"></a>&nbsp;&nbsp;&nbsp;<a style=" color:#9D849A; font-size:15px;" href="#top"><span class="lang-en">[back top]</span><span class="lang-zh">[返回顶部]</span></a></h2>
 <ul>
-
-  <li> 2026: Two papers accepted by <i>International Journal of Computer Vision (IJCV)</i>.</li>
-  <li> 2026: One paper accepted by <i>ACL2026 (Findings)</i>.</li>
-  <li> 2026: One paper accepted by <i>Pattern Recognition (PR)</i>.</li>
-  <li> 12/2025: One paper accepted by <i>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</i>.</li>
-  <li> 07/2025: One paper accepted by <i>ACM MM2025</i>.</li>
+  <li class="lang-en"> 2026: Two papers accepted by <i>International Journal of Computer Vision (IJCV)</i>.</li>
+  <li class="lang-zh"> 2026：两篇论文被 <i>International Journal of Computer Vision (IJCV)</i> 接收。</li>
+  <li class="lang-en"> 2026: One paper accepted by <i>ACL2026 (Findings)</i>.</li>
+  <li class="lang-zh"> 2026：一篇论文被 <i>ACL 2026 (Findings)</i> 接收。</li>
+  <li class="lang-en"> 2026: One paper accepted by <i>Pattern Recognition (PR)</i>.</li>
+  <li class="lang-zh"> 2026：一篇论文被 <i>Pattern Recognition (PR)</i> 接收。</li>
+  <li class="lang-en"> 12/2025: One paper accepted by <i>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</i>.</li>
+  <li class="lang-zh"> 2025.12：一篇论文被 <i>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</i> 接收。</li>
+  <li class="lang-en"> 07/2025: One paper accepted by <i>ACM MM2025</i>.</li>
+  <li class="lang-zh"> 2025.07：一篇论文被 <i>ACM MM 2025</i> 接收。</li>
 </ul>
 
 
-<h2>Publications<a name="publications"></a>&nbsp;&nbsp;&nbsp;<a style=" color:#9D849A; font-size:15px;" href="#top">[back top]</a></h2>
-<h3>Journal</h3>
+<h2><span class="lang-en">Publications</span><span class="lang-zh">论文成果</span><a name="publications"></a>&nbsp;&nbsp;&nbsp;<a style=" color:#9D849A; font-size:15px;" href="#top"><span class="lang-en">[back top]</span><span class="lang-zh">[返回顶部]</span></a></h2>
+<h3><span class="lang-en">Journal</span><span class="lang-zh">期刊</span></h3>
 <table class="pub_table">
   <tbody>
 
@@ -104,6 +93,7 @@
       <td class="pub_td2"> <font color="goldenrod">Yiwei Ma</font>, Ke Ye, Weihuang Lin, Jiayi Ji, Xiaoshuai Sun<sup>✉</sup>, Tat-Seng Chua, Rongrong Ji
         <br><b>An Extensive Benchmark for Single-Round and Multi-Round Instruction-Based Image Editing</b>
         <br>International Journal of Computer Vision (IJCV), 2026<br>
+        [<a href="https://link.springer.com/article/10.1007/s11263-026-02849-5" target="_blank">PDF</a>]
         [<a href="https://github.com/cocoshe/I2EBench" target="_blank">Code</a>]
       </td>
     </tr>
@@ -114,6 +104,7 @@
         <br><b>CoP: Chain of Perception for Referring 3D Instance Segmentation</b>
         <br>International Journal of Computer Vision (IJCV), 2026<br>
         [<a href="https://link.springer.com/article/10.1007/s11263-025-02699-7" target="_blank">PDF</a>]
+        [<a href="https://github.com/xmu-xiaoma666/CoP" target="_blank">Code</a>]
       </td>
     </tr>
 
@@ -144,8 +135,9 @@
         <br><b>X-Dreamer: Creating High-quality 3D Content by Bridging the Domain Gap Between Text-to-2D and Text-to-3D Generation</b>
         <br>ACM Transactions on Multimedia Computing, Communications, and Applications (ToMM), 2024
         <br>
-      [<a href="https://arxiv.org/abs/2312.00085" target="_blank">arXiv</a>] 
-      [<a href="https://github.com/xmu-xiaoma666/X-Dreamer" target="_blank">Code</a>]  
+      [<a href="https://dl.acm.org/doi/10.1145/3687475" target="_blank">PDF</a>]
+      [<a href="https://arxiv.org/abs/2312.00085" target="_blank">arXiv</a>]
+      [<a href="https://github.com/xmu-xiaoma666/X-Dreamer" target="_blank">Code</a>]
       [<a href="https://xmu-xiaoma666.github.io/Projects/X-Dreamer/" target="_blank">Project Page</a>]
       </td>
     </tr>    
@@ -154,7 +146,7 @@
       <td class="pub_td1"> <img src="./imgs/LSTNet.png" class="papericon"></td>
       <td class="pub_td2">  <font color="goldenrod">Yiwei Ma</font>, Jiayi Ji, Xiaoshuai Sun<sup>✉</sup>, Yiyi Zhou, Rongrong Ji
         <br><b>Towards Local Visual Modeling for Image Captioning</b>
-        <br>Pattern Recognition (PR), 2023<br>
+        <br>Pattern Recognition (PR), 2023 <i><b><span style="color: red;"><span class="lang-en">(ESI Highly Cited Paper)</span><span class="lang-zh">（ESI 高被引论文）</span></span></b></i><br>
         [<a href="https://www.sciencedirect.com/science/article/abs/pii/S0031320323001218" target="_blank">PDF</a>]	
         [<a href="https://arxiv.org/abs/2302.06098" target="_blank">ArXiv</a>]	
         [<a href="https://github.com/xmu-xiaoma666/LSTNet" target="_blank">Code</a>]	
@@ -188,7 +180,7 @@
 </table>
 
 
-<h3>Conference</h3>
+<h3><span class="lang-en">Conference</span><span class="lang-zh">会议</span></h3>
 <table class="pub_table">
   <tbody>
 
@@ -353,7 +345,7 @@
 
   </tbody>
 </table>
-<h3>Preprint</h3>
+<h3><span class="lang-en">Preprint</span><span class="lang-zh">预印本</span></h3>
 <table class="pub_table">
   <tbody>
 
@@ -403,122 +395,168 @@
 
 
 
-<h2>Projects<a name="projects"></a>&nbsp;&nbsp;&nbsp;<a style=" color:#9D849A; font-size:15px;" href="#top">[back top]</a></h2>
+<h2><span class="lang-en">Projects</span><span class="lang-zh">代表项目</span><a name="projects"></a>&nbsp;&nbsp;&nbsp;<a style=" color:#9D849A; font-size:15px;" href="#top"><span class="lang-en">[back top]</span><span class="lang-zh">[返回顶部]</span></a></h2>
 <h3></h3>
 <table class="pub_table">
+
+  <!-- dots projects temporarily hidden, to be shown later
+  <tr>
+    <td class="pub_td1"> <img src="./imgs/dots_vlm1.png" class="papericon"></td>
+    <td class="pub_td2">
+      <b>dots.vlm1.inst</b>&nbsp;<font color="#e63462"><i><b>(Xiaohongshu · dots)</b></i></font>
+      <br>Instruction-tuned multimodal large language model from the dots series, released on Hugging Face.<br>
+      [<a href="https://huggingface.co/rednote-hilab/dots.vlm1.inst" target="_blank">Hugging Face</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td class="pub_td1"> <img src="./imgs/dots_ocr.png" class="papericon"></td>
+    <td class="pub_td2">
+      <b>dots.ocr</b>&nbsp;<font color="#e63462"><i><b>(Xiaohongshu · dots)</b></i></font>
+      <br>Multilingual document layout parsing and OCR model from the dots series, released on Hugging Face.<br>
+      [<a href="https://huggingface.co/rednote-hilab/dots.mocr" target="_blank">Hugging Face</a>]
+    </td>
+  </tr>
+  -->
 
   <tr>
     <td class="pub_td1"> <img src="./imgs/attention_git.png" class="papericon"></td>
-    <td class="pub_td2"> 
+    <td class="pub_td2">
       <br><b>External-Attention-pytorch</b>
       <br>Pytorch implementation of various Attention Mechanisms, MLP, Re-parameter, Convolution, which is helpful to further understand papers.<br>
-      [<a href="https://github.com/xmu-xiaoma666/External-Attention-pytorch" target="_blank">github </a>] <font color="#FF0000"><i><b>(11400+ stars)</b></i></font>  
+      [<a href="https://github.com/xmu-xiaoma666/External-Attention-pytorch" target="_blank">github </a>] <font color="#FF0000"><i><b>(11400+ stars)</b></i></font>
     </td>
   </tr>
 </table>
 
 
 
-<h2>Patent<a name="patent"></a>&nbsp;&nbsp;&nbsp;<a style=" color:#9D849A; font-size:15px;" href="#top">[back top]</a></h2>
+<h2><span class="lang-en">Patent</span><span class="lang-zh">发明专利</span><a name="patent"></a>&nbsp;&nbsp;&nbsp;<a style=" color:#9D849A; font-size:15px;" href="#top"><span class="lang-en">[back top]</span><span class="lang-zh">[返回顶部]</span></a></h2>
 <h3></h3>
 <table class="pub_table">
-<ul>
-
+  <tbody>
 
   <tr>
     <td class="pub_td2">
-      <li>(已授权)<b>一种基于文本信息的指向性3D实例分割方法</b> - 公开号: CN117634486A - [<a href="https://www.baiten.cn/patent/detail/84129a8ff543f9fa1697375de7b1af074ca8c13bb7a43aaf?sc=&fq=&type=&sort=&sortField=&q=%E9%A9%AC%E7%A5%8E%E7%82%9C+%E5%8E%A6%E9%97%A8%E5%A4%A7%E5%AD%A6&rows=10#1/CN202410112132.7/detail/abst" target="_blank">详情</a>] </li> 
+      <span class="patent-tag">已授权</span> <b>一种基于文本信息的指向性3D实例分割方法</b> — 公开号: CN117634486A &nbsp;[<a href="https://www.baiten.cn/patent/detail/84129a8ff543f9fa1697375de7b1af074ca8c13bb7a43aaf?sc=&fq=&type=&sort=&sortField=&q=%E9%A9%AC%E7%A5%8E%E7%82%9C+%E5%8E%A6%E9%97%A8%E5%A4%A7%E5%AD%A6&rows=10#1/CN202410112132.7/detail/abst" target="_blank">详情</a>]
     </td>
   </tr>
 
   <tr>
     <td class="pub_td2">
-      <li>(已授权)<b>一种基于链式感知的指向性3D实例分割方法</b> - 公开号: CN117593527A - [<a href="https://www.baiten.cn/patent/detail/84129a8ff543f9fa1697375de7b1af074ca8c13bb7a43aaf?sc=&fq=&type=&sort=&sortField=&q=%E9%A9%AC%E7%A5%8E%E7%82%9C+%E5%8E%A6%E9%97%A8%E5%A4%A7%E5%AD%A6&rows=10#1/CN202410073323.7/detail/abst" target="_blank">详情</a>] </li> 
+      <span class="patent-tag">已授权</span> <b>一种基于链式感知的指向性3D实例分割方法</b> — 公开号: CN117593527A &nbsp;[<a href="https://www.baiten.cn/patent/detail/84129a8ff543f9fa1697375de7b1af074ca8c13bb7a43aaf?sc=&fq=&type=&sort=&sortField=&q=%E9%A9%AC%E7%A5%8E%E7%82%9C+%E5%8E%A6%E9%97%A8%E5%A4%A7%E5%AD%A6&rows=10#1/CN202410073323.7/detail/abst" target="_blank">详情</a>]
     </td>
-</tr>
-
-<tr>
-  <td class="pub_td2">
-    <li>(已授权)<b>利用文本到图像扩散模型实现短语级定位的方法</b> - 公开号: CN118247799A - [<a href="https://www.baiten.cn/patent/detail/84129a8ff543f9fa1697375de7b1af074ca8c13bb7a43aaf?sc=&fq=&type=&sort=&sortField=&q=%E9%A9%AC%E7%A5%8E%E7%82%9C+%E5%8E%A6%E9%97%A8%E5%A4%A7%E5%AD%A6&rows=10#1/CN202410661746.0/detail/abst" target="_blank">详情</a>]</li> 
-  </td>
-</tr>
-
-<tr>
-  <td class="pub_td2">
-    <li>(已授权)<b>一种面向指向性目标分割的半监督学习方法</b> - 公开号: CN117975241A - [<a href="https://www.baiten.cn/patent/detail/84129a8ff543f9fa1697375de7b1af074ca8c13bb7a43aaf?sc=&fq=&type=&sort=&sortField=&q=%E9%A9%AC%E7%A5%8E%E7%82%9C+%E5%8E%A6%E9%97%A8%E5%A4%A7%E5%AD%A6&rows=10#1/CN202410370335.6/detail/abst" target="_blank">详情</a>]</li> 
-  </td>
-</tr>
-
-    <tr>
-      <td class="pub_td2">
-        <li>(已授权)<b>面向局部视觉建模的图像描述生成方法</b> - 公开号: CN115964530A - [<a href="https://www.baiten.cn/patent/detail/bb65a03c36e01639e02e6614b74adfc8271986998898c0b2?sc=&fq=&type=&sort=&sortField=&q=%E9%A9%AC%E7%A5%8E%E7%82%9C%2B%E5%8E%A6%E9%97%A8%E5%A4%A7%E5%AD%A6&rows=10#1/CN202310040601.4/detail/abst" target="_blank">详情</a>]</li> 
-      </td>
-  </tr>
-  <tr>
-      <td class="pub_td2">
-        <li>(已授权)<b>基于文本的人物检索的双向一对多嵌入对齐方法</b> - 公开号: CN116304145A - [<a href="https://www.baiten.cn/patent/detail/84129a8ff543f9fa1697375de7b1af074ca8c13bb7a43aaf?sc=&fq=&type=&sort=&sortField=&q=%E9%A9%AC%E7%A5%8E%E7%82%9C%2B%E5%8E%A6%E9%97%A8%E5%A4%A7%E5%AD%A6&rows=10#1/CN202310298214.0/detail/abst" target="_blank">详情</a>]</li> 
-      </td>
-  </tr>
-  <tr>
-      <td class="pub_td2">
-        <li>(已授权)<b>基于空间感知网络的三维指向性目标分割方法</b> - 公开号: CN118365659A - [<a href="https://www.baiten.cn/patent/detail/84129a8ff543f9fa1697375de7b1af074ca8c13bb7a43aaf?sc=&fq=&type=&sort=&sortField=&q=%E9%A9%AC%E7%A5%8E%E7%82%9C+%E5%8E%A6%E9%97%A8%E5%A4%A7%E5%AD%A6&rows=10#1/CN202410796369.1/detail/abst" target="_blank">详情</a>]</li> 
-      </td>
   </tr>
 
   <tr>
-      <td class="pub_td2">
-        <li>(已授权)<b>通过混合扩散监督生成多模态到三维物体的方法</b> - 授权公告号: CN119625216B - [<a href="https://patents.google.com/patent/CN119625216B/zh" target="_blank">详情</a>]</li>
-      </td>
+    <td class="pub_td2">
+      <span class="patent-tag">已授权</span> <b>利用文本到图像扩散模型实现短语级定位的方法</b> — 公开号: CN118247799A &nbsp;[<a href="https://www.baiten.cn/patent/detail/84129a8ff543f9fa1697375de7b1af074ca8c13bb7a43aaf?sc=&fq=&type=&sort=&sortField=&q=%E9%A9%AC%E7%A5%8E%E7%82%9C+%E5%8E%A6%E9%97%A8%E5%A4%A7%E5%AD%A6&rows=10#1/CN202410661746.0/detail/abst" target="_blank">详情</a>]
+    </td>
   </tr>
 
   <tr>
-      <td class="pub_td2">
-        <li>(已授权)<b>基于多模态大语言模型的对话生成方法及装置</b> - 授权公告号: CN119938874B - [<a href="https://patents.google.com/patent/CN119938874B/zh" target="_blank">详情</a>]</li>
-      </td>
+    <td class="pub_td2">
+      <span class="patent-tag">已授权</span> <b>一种面向指向性目标分割的半监督学习方法</b> — 公开号: CN117975241A &nbsp;[<a href="https://www.baiten.cn/patent/detail/84129a8ff543f9fa1697375de7b1af074ca8c13bb7a43aaf?sc=&fq=&type=&sort=&sortField=&q=%E9%A9%AC%E7%A5%8E%E7%82%9C+%E5%8E%A6%E9%97%A8%E5%A4%A7%E5%AD%A6&rows=10#1/CN202410370335.6/detail/abst" target="_blank">详情</a>]
+    </td>
   </tr>
 
-</ul>
+  <tr>
+    <td class="pub_td2">
+      <span class="patent-tag">已授权</span> <b>面向局部视觉建模的图像描述生成方法</b> — 公开号: CN115964530A &nbsp;[<a href="https://www.baiten.cn/patent/detail/bb65a03c36e01639e02e6614b74adfc8271986998898c0b2?sc=&fq=&type=&sort=&sortField=&q=%E9%A9%AC%E7%A5%8E%E7%82%9C%2B%E5%8E%A6%E9%97%A8%E5%A4%A7%E5%AD%A6&rows=10#1/CN202310040601.4/detail/abst" target="_blank">详情</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td class="pub_td2">
+      <span class="patent-tag">已授权</span> <b>基于文本的人物检索的双向一对多嵌入对齐方法</b> — 公开号: CN116304145A &nbsp;[<a href="https://www.baiten.cn/patent/detail/84129a8ff543f9fa1697375de7b1af074ca8c13bb7a43aaf?sc=&fq=&type=&sort=&sortField=&q=%E9%A9%AC%E7%A5%8E%E7%82%9C%2B%E5%8E%A6%E9%97%A8%E5%A4%A7%E5%AD%A6&rows=10#1/CN202310298214.0/detail/abst" target="_blank">详情</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td class="pub_td2">
+      <span class="patent-tag">已授权</span> <b>基于空间感知网络的三维指向性目标分割方法</b> — 公开号: CN118365659A &nbsp;[<a href="https://www.baiten.cn/patent/detail/84129a8ff543f9fa1697375de7b1af074ca8c13bb7a43aaf?sc=&fq=&type=&sort=&sortField=&q=%E9%A9%AC%E7%A5%8E%E7%82%9C+%E5%8E%A6%E9%97%A8%E5%A4%A7%E5%AD%A6&rows=10#1/CN202410796369.1/detail/abst" target="_blank">详情</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td class="pub_td2">
+      <span class="patent-tag">已授权</span> <b>通过混合扩散监督生成多模态到三维物体的方法</b> — 授权公告号: CN119625216B &nbsp;[<a href="https://patents.google.com/patent/CN119625216B/zh" target="_blank">详情</a>]
+    </td>
+  </tr>
+
+  <tr>
+    <td class="pub_td2">
+      <span class="patent-tag">已授权</span> <b>基于多模态大语言模型的对话生成方法及装置</b> — 授权公告号: CN119938874B &nbsp;[<a href="https://patents.google.com/patent/CN119938874B/zh" target="_blank">详情</a>]
+    </td>
+  </tr>
+
+  </tbody>
 </table>
 
 
 
 
-<h2>Major Awards<a name="awards"></a>&nbsp;&nbsp;&nbsp;<a style=" color:#9D849A; font-size:15px;" href="#top">[back top]</a></h2>
+<h2><span class="lang-en">Major Awards</span><span class="lang-zh">主要奖项</span><a name="awards"></a>&nbsp;&nbsp;&nbsp;<a style=" color:#9D849A; font-size:15px;" href="#top"><span class="lang-en">[back top]</span><span class="lang-zh">[返回顶部]</span></a></h2>
 <ul>
-  <li>  National Scholarship, 2024  </li> 
-  <li>  National Scholarship, 2022  </li> 
-  <li>  National Scholarship, 2019  </li> 
-  <li>  ZheJiang Province Excellent Graduate, 2020  </li> 
-  <li>  Zhejiang Province Government Scholarship, 2018  </li>
-  <li>  Xiamen University Scholarship, 2024  </li> 
-  <li>  Top-10 Student of Zhejiang Sci-Tech University, 2019  </li> 
+  <li class="lang-en">  Young Talent Support Project for Ph.D. Students, China Association for Science and Technology (CAST), 2025  </li>
+  <li class="lang-zh">  中国科协青年人才托举工程博士生专项计划（青托），2025  </li>
+  <li class="lang-en">  National Natural Science Foundation of China (NSFC) Youth Student Basic Research Project (Principal Investigator), 2024  </li>
+  <li class="lang-zh">  国家自然科学基金青年学生基础研究项目（国自然，唯一主持人，资助 30 万元），2024  </li>
+  <li class="lang-en">  Baidu Scholarship (Global Top 40), 2024  </li>
+  <li class="lang-zh">  百度奖学金（全球 40 强），2024  </li>
+  <li class="lang-en">  National Scholarship, 2024  </li>
+  <li class="lang-zh">  博士研究生国家奖学金，2024  </li>
+  <li class="lang-en">  National Scholarship, 2022  </li>
+  <li class="lang-zh">  硕士研究生国家奖学金，2022  </li>
+  <li class="lang-en">  National Scholarship, 2019  </li>
+  <li class="lang-zh">  本科生国家奖学金，2019  </li>
+  <li class="lang-en">  ZheJiang Province Excellent Graduate, 2020  </li>
+  <li class="lang-zh">  浙江省优秀毕业生，2020  </li>
+  <li class="lang-en">  Zhejiang Province Government Scholarship, 2018  </li>
+  <li class="lang-zh">  浙江省政府奖学金，2018  </li>
+  <li class="lang-en">  Xiamen University Huang Xilie Scholarship, 2023  </li>
+  <li class="lang-zh">  厦门大学黄希烈奖学金，2023  </li>
+  <li class="lang-en">  Xiamen University Wind Scholarship, 2022  </li>
+  <li class="lang-zh">  厦门大学万得奖学金，2022  </li>
+  <li class="lang-en">  Top-10 Student of Zhejiang Sci-Tech University, 2019  </li>
+  <li class="lang-zh">  浙江理工大学十佳大学生，2019  </li>
 </ul>
 
-<h2>Professional Activities<a name="activities"></a>&nbsp;&nbsp;&nbsp;<a style=" color:#9D849A; font-size:15px;" href="#top">[back top]</a></h2>
+<h2><span class="lang-en">Professional Activities</span><span class="lang-zh">学术活动</span><a name="activities"></a>&nbsp;&nbsp;&nbsp;<a style=" color:#9D849A; font-size:15px;" href="#top"><span class="lang-en">[back top]</span><span class="lang-zh">[返回顶部]</span></a></h2>
 <ul>
-  <li><b>Conference Reviewer:</b>
+  <li><b><span class="lang-en">Area Chair:</span><span class="lang-zh">领域主席：</span></b>
     <ul>
-      <li>ICML 2025</li>
-      <li>CVPR 2025</li>
+      <li>ACM MM 2025 Workshop</li>
+    </ul>
+  </li>
+  <li><b><span class="lang-en">Conference Reviewer:</span><span class="lang-zh">会议审稿人：</span></b>
+    <ul>
+      <li>ICML 2024, ICML 2025</li>
       <li>ICLR 2024</li>
-      <li>NeurIPS 2024</li>
-      <li>ICML 2024</li>
-      <li>ACMMM 2024</li>
-      <li>ACMMM 2023</li>
+      <li>NeurIPS 2024, NeurIPS 2025</li>
+      <li>CVPR 2025</li>
+      <li>ICCV 2025</li>
+      <li>AAAI 2025</li>
+      <li>ACM MM 2023, ACM MM 2024, ACM MM 2025</li>
     </ul>
   </li>
-  <li><b>Journal Reviewer:</b>
+  <li><b><span class="lang-en">Journal Reviewer:</span><span class="lang-zh">期刊审稿人：</span></b>
     <ul>
-      <li>Pattern Recognition (PR)</li>
-      <li>IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)</li>
+      <li>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</li>
       <li>IEEE Transactions on Image Processing (TIP)</li>
-      <li>Neurocomputing</li>
+      <li>IEEE Transactions on Multimedia (TMM)</li>
+      <li>IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)</li>
       <li>IEEE Transactions on Computational Social Systems (TCSS)</li>
+      <li>ACM Transactions on Asian and Low-Resource Language Information Processing (TALLIP)</li>
+      <li>Pattern Recognition (PR)</li>
+      <li>Neurocomputing</li>
     </ul>
   </li>
 </ul>
 
 </div>
 </div>
+
+<script src="./imgs/site.js"></script>
 </body>
 </html>
