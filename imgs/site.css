@@ -67,6 +67,8 @@ a:hover{color:#1d4e8f;border-bottom:1px solid var(--accent);}
 @media (max-width:640px){
   .hero{flex-direction:column;text-align:center;padding:26px 18px;}
   .contact-links{justify-content:center;}
+  .hero-stats{justify-content:center;}
+  .hero-honors{justify-content:center;}
 }
 
 /* Nav pills */
@@ -156,6 +158,52 @@ table.pub_table li{margin-top:.5em;font-size:14px;}
   display:inline-block;padding:1px 8px;border-radius:6px;
   background:#e8f5ec;color:#1f8a4c;font-size:11.5px;font-weight:600;
   margin-right:6px;vertical-align:middle;
+}
+
+/* Hero hard-metrics stats */
+.hero-stats{display:flex;flex-wrap:wrap;align-items:center;margin:0 0 .95em;font-size:13px;color:var(--muted);font-weight:600;}
+.hero-stat{display:inline-flex;align-items:center;}
+.hero-stat:not(:last-child):after{content:"\00B7";margin:0 12px;color:#c2cad6;font-weight:700;}
+.hero-stats b{color:var(--accent);font-weight:700;font-size:14.5px;}
+
+/* Offer logo strip */
+.offer-logos{display:flex;flex-wrap:wrap;gap:8px;margin:.2em 0 1.15em;}
+.offer-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 12px 5px 9px;border-radius:999px;
+  background:#fff;border:1px solid var(--line);
+  font-size:12.5px;font-weight:700;color:var(--ink);text-decoration:none;
+  box-shadow:0 1px 3px rgba(16,24,40,.07);white-space:nowrap;
+  transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease;
+}
+.offer-badge:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(16,24,40,.12);border-color:#cdd7e6;color:var(--ink);}
+.offer-badge img{height:16px;width:16px;object-fit:contain;display:block;}
+.offer-badge b{font-weight:700;color:var(--ink);}
+.offer-badge .prog{color:var(--muted);font-weight:600;}
+.offer-badge .txt-logo{font-weight:800;font-size:12px;letter-spacing:.3px;}
+
+/* Hero honors chips */
+.hero-honors{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 .95em;}
+.honor-chip{
+  display:inline-flex;align-items:center;
+  padding:4px 11px;border-radius:8px;
+  background:#fdf6e8;border:1px solid #ecdcb8;
+  color:#8a6d1f;font-size:12.5px;font-weight:600;
+}
+.honor-chip b{color:#b8860b;font-weight:800;}
+
+/* Latest news (grouped by year) */
+.news-group{display:flex;gap:16px;margin-top:.9em;}
+.news-year{
+  flex:0 0 auto;min-width:46px;
+  font-weight:700;color:var(--accent);font-size:14.5px;padding-top:.05em;
+}
+.news-group ul{margin:0;flex:1;}
+.news-group li{position:relative;padding-left:18px;margin-top:.45em;font-size:14px;}
+.news-group li:first-child{margin-top:0;}
+.news-group li:before{
+  content:"";position:absolute;left:2px;top:9px;
+  width:6px;height:6px;border-radius:50%;background:var(--accent);
 }
 
 /* Language toggle */
